@@ -6,15 +6,17 @@ use warnings;
 use Module::Build;
 
 my $builder = Module::Build->new(
-    module_name => 'Stuffo::Carbon::Client',
+	module_name => 'Stuffo::Carbon::Client',
 
-    dist_author => 'Cristian Rat',
-    dist_abstract => 'Perl client for Stuffo-Carbon',
+	dist_author => 'Cristian Rat',
+	dist_abstract => 'Perl client for Stuffo-Carbon',
 
-    requires => {
-            'Moose' => undef,
-            'Mojolicious' => undef,
-    },
+	# TODO: Keep this list ordered
+	requires => {
+			'Mojolicious' => undef,
+			'Moose' => undef,
+			'MooseX::Aliases' => undef,
+	},
 );
 
 $builder->create_build_script();
