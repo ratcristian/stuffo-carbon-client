@@ -9,7 +9,7 @@ my $builder = Module::Build->new(
     module_name => 'Stuffo::Carbon::Client',
 
     dist_author => 'Cristian Rat',
-    dist_abstract => '',
+    dist_abstract => 'Perl client for Stuffo-Carbon',
 
     requires => {
             'Moose' => undef,
