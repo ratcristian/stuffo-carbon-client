@@ -30,3 +30,44 @@ sub get {
 __PACKAGE__->meta()->make_immutable();
 
 1;
+
+__END__
+
+=head1 NAME
+
+Stuffo::Carbon::Client - 
+
+=head1 SYNOPSIS
+
+	# The code goes here...
+
+=head1 DESCRIPTION
+
+=head2 Methods
+
+=over 12
+
+=item C<new>
+
+Description
+
+=item C<put>
+
+Description
+
+=item C<get>
+
+Description
+
+=back
+
+=head1 AUTHOR
+
+Cristian Rat - 
+Tudor Marghidanu - L<tudor@stuffo.info>
+
+=head1 SEE ALSO
+
+L<Stuffo::Carbon>
+
+=cut
