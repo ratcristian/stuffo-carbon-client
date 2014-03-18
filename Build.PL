@@ -13,9 +13,10 @@ my $builder = Module::Build->new(
 
 	# TODO: Keep this list ordered
 	requires => {
-			'Mojolicious' => undef,
-			'Moose' => undef,
-			'MooseX::Aliases' => undef,
+            'Mojolicious' => undef,
+            'Mojo::UserAgent' => undef,
+            'Moose' => undef,
+            'MooseX::Aliases' => undef,
 	},
 );
 
