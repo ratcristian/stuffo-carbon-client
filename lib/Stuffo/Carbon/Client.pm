@@ -3,30 +3,32 @@ package Stuffo::Carbon::Client;
 use Moose;
 
 has 'url' => (
-    is => 'ro',
-    isa => 'Str',
-    required => 1,
+	is => 'ro',
+	isa => 'Str',
+	required => 1,
 );
 
 has '_ua' => (
-    is => 'ro',
-    isa => 'Mojo::UserAgent',
-    lazy => 1,
-    default => sub {
-            return Mojo::UserAgent->new();
-    }
+	is => 'ro',
+	isa => 'Mojo::UserAgent',
+	lazy => 1,
+	default => sub {
+			return Mojo::UserAgent->new();
+	}
 );
 
 sub put {
-    my ( $self, $name, $body ) = @_;
+	my ( $self, $name, $body ) = @_;
 
-    return $self->_ua->post( sprintf( '%s/put/%s', $self->url(), $name ) => {'Content-Type' => 'text/plain'} => $body );
+	# TODO: Add error checking to this and signal the errors accordingly
+	return $self->_ua->post( sprintf( '%s/put/%s', $self->url(), $name ) => {'Content-Type' => 'text/plain'} => $body );
 }
 
 sub get {
-    my ( $self, $name ) = @_;
+	my ( $self, $name ) = @_;
 
-    return $self->_ua->post( sprintf( '%s/get/%s', $self->url(), $name ) )->res()->body();
+	# TODO: This is actually a get!
+	return $self->_ua->post( sprintf( '%s/get/%s', $self->url(), $name ) )->res()->body();
 }
 
 __PACKAGE__->meta()->make_immutable();
@@ -37,7 +39,7 @@ __END__
 
 =head1 NAME
 
-Stuffo::Carbon::Client - 
+Stuffo::Carbon::Client -
 
 =head1 SYNOPSIS
 
@@ -65,7 +67,7 @@ Description
 
 =head1 AUTHOR
 
-Cristian Rat - 
+Cristian Rat -
 Tudor Marghidanu - L<tudor@stuffo.info>
 
 =head1 SEE ALSO
